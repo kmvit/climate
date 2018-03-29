@@ -1,0 +1,35 @@
+
+<div class="page-section-bg2 half-bg-col">
+<div class="img-col-left">
+<div class="col-bg" data-bg="static/images/001-01.jpg" style="">&nbsp;</div>
+</div>
+
+<div class="container extra-size2">
+<div class="row">
+<div class="col-md-6">&nbsp;</div>
+
+<div class="col-md-6">
+<h2 class="section-title">Коротко о наших услугах</h2>
+
+<div class="accordion var2">
+{% for item in cms_pages %}
+<div class="accordion-item">
+<h6 class="a-title active">{{item}}</h6>
+
+<div class="a-content">
+<p>Duis ac turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros:</p>
+
+<ul class="custom-list type-5">
+	<li><a href="#">Air Conditioners</a></li>
+	<li><a href="#">Packaged AC Units</a></li>
+	<li><a href="#">Geothermal</a></li>
+	<li><a href="#">Ductless Mini-Splits</a></li>
+</ul>
+<a class="btn btn-small" href="#">Подробнее</a></div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>

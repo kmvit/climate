@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  {% load cms_tags menu_tags sekizai_tags staticfiles thumbnail%}
+  <!-- Google Web Fonts
+  ================================================== -->
+
+  <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Oswald:200,300,400,500,600,700" rel="stylesheet">
+
+  <!-- Basic Page Needs
+  ================================================== -->
+
+  <title>{% block title %}{% page_attribute "page_title" %}{% endblock title %}</title>
+
+  <!--meta info-->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Vendor CSS
+  ============================================ -->
+
+  <link rel="stylesheet" href="{% static 'font/demo-files/demo.css' %}">
+  <link rel="stylesheet" href="{% static 'font/custom/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/revolution/css/settings.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/revolution/css/layers.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/revolution/css/navigation.css' %}">
+
+  <!-- CSS theme files
+  ============================================ -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  {% render_block "css" %}
+
+  {% render_block "js" %}
+</head>
+
+<body>
+{% cms_toolbar %}
+  <div class="loader"></div>
+
+  <!--cookie-->
+  <!-- <div class="cookie">
+          <div class="container">
+            <div class="clearfix">
+              <span>Please note this website requires cookies in order to function correctly, they do not store any specific information about you personally.</span>
+              <div class="f-right"><a href="#" class="button button-type-3 button-orange">Accept Cookies</a><a href="#" class="button button-type-3 button-grey-light">Read More</a></div>
+            </div>
+          </div>
+        </div>-->
+
+  <!-- - - - - - - - - - - - - - Wrapper - - - - - - - - - - - - - - - - -->
+
+  <div id="wrapper" class="wrapper-container">
+
+    <!-- - - - - - - - - - - - - Mobile Menu - - - - - - - - - - - - - - -->
+
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+
+    <!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->
+    <header id="header" class="header style-3 sticky-header">
+
+      <!-- searchform -->
+
+      <div class="searchform-wrap">
+        <div class="vc-child h-inherit">
+
+          <form>
+            <button type="submit" class="btn btn-style-5">Search</button>
+            <div class="wrapper">
+              <input type="text" name="search" placeholder="Start typing...">
+            </div>
+          </form>
+
+          <button class="close-search-form"></button>
+
+        </div>
+      </div>
+
+      <!-- pre-header -->
+
+      <div class="pre-header">
+
+        <div class="container extra-width">
+          <div class="flex-row flex-justify">
+            <a href>Выберите город</a>
+            <ul class="social-icons">
+
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-gplus-3"></i></a></li>
+              <li><a href="#"><i class="icon-linkedin-3"></i></a></li>
+              <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+              <li><a href="#"><i class="icon-instagram-5"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- top-header -->
+
+      <div class="top-header">
+
+        <div class="container extra-width">
+
+          <div class="flex-row flex-justify flex-center">
+
+            <!-- logo -->
+
+            <div class="logo-wrap">
+
+              <a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a>
+
+            </div>
+
+            <ul class="contact-info">
+              <li class="info-item">
+                <i class="licon-telephone2"></i>
+                <div class="item-info">
+                  <span>Санкт-Петербург</span>
+                  <h4>987-654-3210</h4>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- - - - - - - - - - - - / Mobile Menu - - - - - - - - - - - - - -->
+
+      <!--main menu-->
+
+      <div class="menu-holder">
+
+        <div class="container extra-width">
+
+          <div class="menu-wrap">
+
+            <div class="nav-item flex-row flex-justify flex-center">
+
+              <!-- - - - - - - - - - - - - - Navigation - - - - - - - - - - - - - - - - -->
+
+                {% include 'includes/navbar.html' %}
+
+              <!-- - - - - - - - - - - - - end Navigation - - - - - - - - - - - - - - - -->
+
+              <div class="search-holder">
+
+                <button type="button" class="search-button"></button>
+
+                <a href="#" class="btn btn-style-5">Обратный звононк </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+
+    <!-- - - - - - - - - - - - - end Header - - - - - - - - - - - - - - - -->
+    <!-- - - - - - - - - - - - - - Breadcrumbs - - - - - - - - - - - - - - - - -->
+    {% block bread %}
+
+    <div class="breadcrumbs-wrap style-3">
+
+      <div class="container">
+
+        <h1 class="page-title">{% page_attribute "page_title" %}</h1>
+
+        <ul class="breadcrumbs">
+
+          <li><a href="index.html">Главная</a></li>
+          <li>{% page_attribute "page_title" %}</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    {% endblock bread %}
+    <!-- - - - - - - - - - - - - end Breadcrumbs - - - - - - - - - - - - - - - -->
+
+    <!-- - - - - - - - - - - - - - Revolution Slider - - - - - - - - - - - - - - - - -->
+    {% block slider %}
+
+    {% endblock slider %}
+    <!-- - - - - - - - - - - - - - End of Slider - - - - - - - - - - - - - - - - -->
+
+    <!-- - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->
+    {% block content %}
+    {% endblock content %}
+    {% include 'includes/project_list.html' %}
+    {% include 'includes/partners.html' %}
+    <!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
+
+    <!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+    {% block map %}
+    <div class="map-section">
+      <div class="map-container" id="googleMap">&nbsp;</div>
+
+      <div class="map-info">
+      <div class="content-element4">
+      <h5 class="section-sub-title">Местонахождение</h5>
+
+      <h1 class="section-title">Контакты</h1>
+      </div>
+
+      <ul class="contact-info v-type">
+      	<li class="info-item"><i class="licon-map-marker">&nbsp;</i>
+
+      	<div class="item-info"><span>Санкт-Петербург<br />
+      	пр.Ленинский проспект 0</span></div>
+      	</li>
+      	<li class="info-item">
+      	<div class="item-info"><span>E-mail:</span> <a href="mailto:#">Mail@companyname.com</a></div>
+      	</li>
+      	<li class="info-item"><i class="licon-telephone2">&nbsp;</i>
+      	<div class="item-info"><span>Телефон:</span> <a href="#">987-654-3210</a></div>
+      	</li>
+      	<li class="info-item"><i class="licon-clock3">&nbsp;</i>
+      	<div class="item-info"><span>Часы работы:ПН-ПТ с 9-00 до 20-00<br /></span></div>
+      	</li>
+      </ul>
+      </div>
+    </div>
+    {% endblock %}
+    {% block footer %}
+    <footer id="footer" class="footer style-2">
+
+      <div class="main-footer">
+
+        <div class="container extra-width-2">
+
+          <div class="widget-holder flex-row flex-justify">
+            <!-- widget -->
+            <div class="widget">
+              <h5 class="widget-title">Нам вы можете доверять</h5>
+
+              <div class="brend-box">
+                <a href="#"><img class="footer-logo" src="{% static 'images/logo.png' %}" alt=""></a>
+              </div>
+
+            </div>
+            <!-- widget -->
+            <div class="widget">
+              <h5 class="widget-title">Подписаться на новости</h5>
+              <form id="newsletter" class="style-2">
+                <button type="submit" class="btn-email-icon btn btn-style-5 f-right" data-type="submit"><i class="licon-envelope"></i></button>
+                <div class="wrapper">
+                  <input type="email" placeholder="Введите свой email" name="newsletter-email">
+                </div>
+              </form>
+
+            </div>
+            <!-- widget -->
+              <div class="widget">
+                <h5 class="widget-title">Мы в соц.сетях</h5>
+                <ul class="social-icons style-2">
+
+                  <li><a href="#"><i class="icon-vkontakte-2"></i></a></li>
+                  <li><a href="#"><i class="icon-odnoklassniki"></i></a></li>
+                  <li><a href="#"><i class="icon-instagram"></i></a></li>
+
+                </ul>
+
+              </div>
+            <!-- widget -->
+              <div class="widget">
+                <h5 class="widget-title">Оплата</h5>
+                <div class="pay-box">
+                  <a href="#"><img src="{% static 'images/pay1.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'images/pay2.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'images/pay3.jpg' %}" alt=""></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="copyright flex-row flex-justify">
+            {% static_placeholder 'copyright' %}
+            <ul class="info-links h-type">
+              <li><a href="#">Кондиционирование</a></li>
+              <li><a href="#">Отопление</a></li>
+              <li><a href="#">Водоснабжение</a></li>
+              <li><a href="#">Вентиляция</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+    {% endblock footer %}
+    <!-- - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - -->
+
+  </div>
+
+  <!-- - - - - - - - - - - - end Wrapper - - - - - - - - - - - - - - -->
+
+  <!-- JS Libs & Plugins
+  ============================================ -->
+  <script src="{% static 'js/libs/jquery.modernizr.js' %}"></script>
+  <script src="{% static 'js/libs/jquery-2.2.4.min.js' %}"></script>
+  <script src="{% static 'js/libs/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'js/libs/retina.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBN4XjYeIQbUspEkxCV2dhVPSoScBkIoic"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'plugins/revolution/js/jquery.themepunch.tools.min.js' %}?ver=5.0"></script>
+  <script src="{% static 'plugins/revolution/js/jquery.themepunch.revolution.min.js' %}?ver=5.0"></script>
+  <script src="{% static 'plugins/jquery.queryloader2.min.js' %}"></script>
+  <script src="{% static 'plugins/owl.carousel.min.js' %}"></script>
+
+  <!-- JS theme files
+  ============================================ -->
+  <script src="{% static 'js/plugins.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

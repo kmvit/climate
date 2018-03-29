@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+<div id="content">
+	<div class="container">
+	{% placeholder "block-1" %}
+	{% placeholder "block-2" %}
+	{% placeholder "block-3" %}
+</div>
+</div>
+<div class="page-section-bg3">
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+
+              <h2 class="section-title">Получить консультацию!</h2>
+              <p class="text-size-medium">Оставьте свой номер телефона и наш менеджер свяжеться с вами в ближайшее время. </p>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+
+              <form class="form-wrap flex-row fx-col-2 style-2">
+
+                <div class="form-col">
+                  <input type="text" placeholder="Имя">
+                </div>
+
+                <div class="form-col">
+                  <input type="text" placeholder="Телефон">
+                </div>
+
+                <div class="form-col">
+                  <div class="custom-select">
+                    <div class="select-title">Выбрать сервис</div>
+                    <ul id="menu-type" class="select-list" style="display: none;"><li>Sort 1</li><li>Sort 2</li><li>Sort 3</li></ul>
+                    <select class="hide" style="display: none;">
+                      <option value="menu">Sort 1</option>
+                      <option value="menu">Sort 2</option>
+                      <option value="menu">Sort 3</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="form-col">
+                  <a href="#" class="btn btn-style-5">Отправить</a>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+{% endblock content %}

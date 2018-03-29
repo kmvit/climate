@@ -1,0 +1,28 @@
+{% load menu_tags %}
+{% for child in children %}
+    <li class="{% if child.children %} dropdown has-megamenu{% endif %}">
+
+        <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+            {{ child.get_menu_title }}
+        </a>
+
+        {% if child.children %}
+        <!--sub menu-->
+        <div class="sub-menu-wrap mega-menu flex-row">
+        {% for item in child.children %}
+
+          <div class="mega-submenu">
+            <h5 class="mega-title"><span class="{% if forloop.counter == 1 %}cicon-cooling{% elif forloop.counter == 2 %}cicon-plumbing{% elif forloop.counter == 3 %}cicon-air-quality{% elif forloop.counter == 4 %}cicon-heating{% endif %}"></span><a href="{{ item.attr.redirect_url|default:item.get_absolute_url }}">{{ item.get_menu_title }}</a></h5>
+            <ul>
+              {% show_sub_menu 1 None 100 "submenu.html" %}
+            </ul>
+          </div>
+
+        {% endfor %}
+        </div>
+        {% endif %}
+
+    </li>
+
+
+{% endfor %}
