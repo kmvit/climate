@@ -170,6 +170,7 @@ CMS_TEMPLATES = (
     ## Customize this
     ('index.html', 'Главная'),
     ('page.html', 'Страница'),
+    ('page_detail.html', 'Страница детальная'),
     ('contact.html', 'Контакты'),
     ('service_list.html', 'Сервисы'),
     ('service.html', 'Сервис'),

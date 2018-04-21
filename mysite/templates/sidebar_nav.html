@@ -1,0 +1,6 @@
+{% load menu_tags %}
+{% for item in children %}
+      <li>
+        <a href="{{ item.get_absolute_url }}">{{ item.get_menu_title }}</a>
+      </li>
+{% endfor %}
