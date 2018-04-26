@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  {% load cms_tags menu_tags sekizai_tags staticfiles thumbnail%}
+  {% load cms_tags menu_tags sekizai_tags staticfiles thumbnail pagelist_tags %}
   <!-- Google Web Fonts
   ================================================== -->
 
@@ -230,7 +230,26 @@
     <!-- - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->
     {% block content %}
     {% endblock content %}
-    {% include 'includes/project_list.html' %}
+    {% block last-projects %}
+    <div class="page-section-bg">
+    <div class="container">
+    <div class="content-element4 align-center">
+    <h5 class="section-sub-title">Наши работы</h5>
+
+    <h2 class="section-title">Смотреть выполненные проекты</h2>
+    </div>
+
+    <div class="entry-box">
+    <div class="row">
+      
+    {% project_list_tags %}
+    </div>
+    </div>
+
+    <div class="align-center"><a class="btn btn-small" href="/projects">Посмотреть все проекты</a></div>
+    </div>
+    </div>
+    {% endblock %}
     {% include 'includes/partners.html' %}
     <!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
 

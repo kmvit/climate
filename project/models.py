@@ -15,6 +15,7 @@ class CategoryProject(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=300, verbose_name='Название')
+    slug = models.SlugField(unique=True)
     category = models.ForeignKey(CategoryProject, verbose_name='Категория')
     image = models.ImageField(upload_to='project', verbose_name='Изображение')
     created = models.DateField(auto_now_add=True)

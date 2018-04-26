@@ -19,7 +19,9 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^projects/', include('project.urls')),
     url(r'^', include('cms.urls')),
+
 ]
 
 # This is only needed when using runserver.

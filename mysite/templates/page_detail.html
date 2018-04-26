@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load menu_tags %}
 {% load pagelist_tags %}
-{% load cms_tags %}
+{% load cms_tags static %}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
@@ -9,38 +9,58 @@
 <div class="page-section">
 
         <div class="container">
-          {% placeholder "block-1" %}
+          <div class="content-element3 align-center">
+            {% placeholder "block-1" %}
+            <hr class="item-divider-3">
+            <div class="row">
+              <h3 class="page-title align-center">Наши преимущества</h5>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/008-teamwork.png' %}">
+                <p>Квалифицированные специалисты</p>
+              </div>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/028-certificate.png' %}">
+                <p>Гарантия качества</p>
+              </div>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/016-hand-bag.png' %}">
+                <p>Бесплатный выезд специалиста</p>
+              </div>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/014-connection.png' %}">
+                <p>Проекты любой сложности</p>
+              </div>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/027-medal.png' %}">
+                <p>Новейшее оборудование</p>
+              </div>
+              <div class="col-md-2">
+                <img src="{% static 'images/icons/003-idea-3.png' %}">
+                <p>Креативные идеи</p>
+              </div>
+            </div>
+          </div>
           {% placeholder "block-2" %}
-          {% placeholder "block-3" %}
-
         </div>
 
 </div>
 
 
 <div class="page-section-bg3">
-
         <div class="container">
-
           <div class="row">
             <div class="col-md-6 col-sm-12">
-
               <h2 class="section-title">Получить консультацию!</h2>
               <p class="text-size-medium">Оставьте свой номер телефона и наш менеджер свяжеться с вами в ближайшее время. </p>
-
             </div>
             <div class="col-md-6 col-sm-12">
-
               <form class="form-wrap flex-row fx-col-2 style-2">
-
                 <div class="form-col">
                   <input type="text" placeholder="Имя">
                 </div>
-
                 <div class="form-col">
                   <input type="text" placeholder="Телефон">
                 </div>
-
                 <div class="form-col">
                   <div class="custom-select">
                     <div class="select-title">Выбрать сервис</div>
@@ -52,18 +72,17 @@
                     </select>
                   </div>
                 </div>
-
-
                 <div class="form-col">
                   <a href="#" class="btn btn-style-5">Отправить</a>
                 </div>
-
               </form>
-
             </div>
           </div>
-
         </div>
-
+      </div>
+      <div class="page-section">
+                  <div class="container">
+                    {% placeholder "block-3" %}
+                  </div>
       </div>
 {% endblock content %}
