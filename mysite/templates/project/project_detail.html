@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load menu_tags %}
+{% load pagelist_tags %}
+{% load cms_tags static %}
+{% block title %}{{object.title}}{% endblock %}
+{% block description %}{% page_attribute "meta_description" %}{% endblock %}
+{% block bread %}
+
+<div class="breadcrumbs-wrap style-3">
+
+  <div class="container">
+
+    <h1 class="page-title">{% page_attribute "title" %}</h1>
+
+    <ul class="breadcrumbs">
+
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="{% url 'projects:project_list' %}">Проекты</a></li>
+      <li>{{object.title}}</li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+{% endblock bread %}
+{% block content %}
+
+<div class="page-section">
+
+        <div class="container">
+          <div class="row">
+            <div class="content-element3 align-center">
+              <div class="col-md-6 col-sm-6">
+                <h2 class="section-title">{{object.title}}</h2>
+                {{object.content|safe}}
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <img src='{{object.image.url}}'>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="container">
+        <div class="row">
+          <h3 class="page-title align-center">Наши преимущества</h5>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/008-teamwork.png' %}">
+            <p>Квалифицированные специалисты</p>
+          </div>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/028-certificate.png' %}">
+            <p>Гарантия качества</p>
+          </div>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/016-hand-bag.png' %}">
+            <p>Бесплатный выезд специалиста</p>
+          </div>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/014-connection.png' %}">
+            <p>Проекты любой сложности</p>
+          </div>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/027-medal.png' %}">
+            <p>Новейшее оборудование</p>
+          </div>
+          <div class="col-md-2 why-we-icon">
+            <img src="{% static 'images/icons/003-idea-3.png' %}">
+            <p>Креативные идеи</p>
+          </div>
+        </div>
+      </div>
+</div>
+{% include 'includes/consultation.html' %}
+
+
+{% endblock content %}

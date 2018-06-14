@@ -1,0 +1,36 @@
+<div class="page-section-bg3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <h2 class="section-title">Получить консультацию!</h2>
+              <p class="text-size-medium">Отправляя нам сообщение, вы соглашаетесь с <br/><a href="/politika-konfidencialnosti/">политикой конфиденциальности</a> </p>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <form class="form-wrap flex-row fx-col-2 style-2" method="post" action="/email/">
+      						    {% csrf_token %}
+                <div class="form-col">
+                  <input type="text" name="name" placeholder="Имя" required>
+                </div>
+                <div class="form-col">
+                  <input type="text" name="phone" placeholder="Телефон" required>
+                </div>
+                <div class="form-col">
+                  <div class="custom-select">
+                    <div class="select-title">Выбрать сервис</div>
+                    <ul id="menu-type" class="select-list" style="display: none;"></ul>
+                    <select class="hide" style="display: none;">
+                      <option value="vent">Вентиляция</option>
+                      <option value="condition">Кондиционирование</option>
+                      <option value="otoplenie">Отопление</option>
+                      <option value="voda">Водоснабжение</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-col">
+                  <button type="submit" class="btn btn-style-5" data-type="submit">Отправить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

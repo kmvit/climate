@@ -6,78 +6,21 @@
 {% block description %}{% page_attribute "meta_description" %}{% endblock %}
 
 {% block content %}
-
 <div class="page-section">
-
         <div class="container">
-
           <div class="tabs vertical var2 style-2 clearfix ui-tabs ui-widget ui-widget-content ui-corner-all">
             <!--tabs navigation-->
             <ul class="tabs-nav clearfix">
-
 							{% show_sub_menu 1 None 100 "sidebar_nav.html" %}
             </ul>
             <!--tabs content-->
             <div class="tabs-content">
-
 							{% placeholder "block-1" %}
 							{% placeholder "block-2" %}
 							{% placeholder "block-3" %}
-
               </div>
             </div>
         </div>
-
   </div>
-
-
-
-<div class="page-section-bg3">
-
-        <div class="container">
-
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-
-              <h2 class="section-title">Получить консультацию!</h2>
-              <p class="text-size-medium">Оставьте свой номер телефона и наш менеджер свяжеться с вами в ближайшее время. </p>
-
-            </div>
-            <div class="col-md-6 col-sm-12">
-
-              <form class="form-wrap flex-row fx-col-2 style-2">
-
-                <div class="form-col">
-                  <input type="text" placeholder="Имя">
-                </div>
-
-                <div class="form-col">
-                  <input type="text" placeholder="Телефон">
-                </div>
-
-                <div class="form-col">
-                  <div class="custom-select">
-                    <div class="select-title">Выбрать сервис</div>
-                    <ul id="menu-type" class="select-list" style="display: none;"><li>Sort 1</li><li>Sort 2</li><li>Sort 3</li></ul>
-                    <select class="hide" style="display: none;">
-                      <option value="menu">Sort 1</option>
-                      <option value="menu">Sort 2</option>
-                      <option value="menu">Sort 3</option>
-                    </select>
-                  </div>
-                </div>
-
-
-                <div class="form-col">
-                  <a href="#" class="btn btn-style-5">Отправить</a>
-                </div>
-
-              </form>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
+{% include 'includes/consultation.html' %}
 {% endblock content %}

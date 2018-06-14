@@ -9,6 +9,7 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from .views import email
 
 admin.autodiscover()
 
@@ -20,8 +21,9 @@ urlpatterns = [
 urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^projects/', include('project.urls')),
+    url(r'^email/', email, name='email'),
     url(r'^', include('cms.urls')),
-
+    url(r'^', include('djangocms_forms.urls')),
 ]
 
 # This is only needed when using runserver.

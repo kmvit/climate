@@ -5,7 +5,7 @@ from .models import *
 
 class ProjectList(ListView):
     model = Project
-    template_name = "projects.html"
+    template_name = "project/projects.html"
     context_name = 'project_list'
 
     def get_context_data(self, **kwargs):
@@ -15,3 +15,11 @@ class ProjectList(ListView):
 
 class ProjectDetail(DetailView):
     model = Project
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectDetail, self).get_context_data(**kwargs)
+        context['category_list'] = CategoryProject.objects.all()
+        return context
+
+class CategoryDetail(DetailView):
+    model = CategoryProject

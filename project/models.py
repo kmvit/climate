@@ -5,6 +5,7 @@ from djangocms_text_ckeditor.fields import HTMLField
 
 class CategoryProject(models.Model):
     title = models.CharField(max_length=300, verbose_name='Название')
+    slug = models.SlugField(unique=False, default='sd')
     class Meta:
         verbose_name='Категория проекта'
         verbose_name_plural = 'Категории Проекта'

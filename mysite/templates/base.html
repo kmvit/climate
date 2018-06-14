@@ -91,12 +91,13 @@
 
         <div class="container extra-width">
           <div class="flex-row flex-justify">
-  
+
             <ul class="social-icons">
 
-              <li><a href="#"><i class="icon-facebook"></i></a></li>
-              <li><a href="#"><i class="icon-vk"></i></a></li>
-              <li><a href="#"><i class="icon-instagram-5"></i></a></li>
+
+              <li><a href="{% static_placeholder 'vk' %}"><i class="icon-vk"></i></a></li>
+              <li><a href="{% static_placeholder 'od' %}"><i class="icon-odnoklassniki"></i></a></li>
+              <li><a href="{% static_placeholder 'instagram' %}"><i class="icon-instagram-5"></i></a></li>
 
             </ul>
           </div>
@@ -124,7 +125,7 @@
                 <i class="licon-rain"></i>
                 <div class="item-info">
                   <span>Санкт-Петербург</span>
-                  <h5><a href="tel:+78126059909">+7(812)605-99-09</a></h5>
+                  <h5><a href="tel:{% static_placeholder 'phone' %}">{% static_placeholder 'phone' %}</a></h5>
                 </div>
               </li>
             </ul>
@@ -132,7 +133,7 @@
               <li class="info-item">
               <i class="licon-clock3"></i>
               <div class="item-info">
-                <span>Открыто 8:00-18:00 <br> ПН - ПТ</span>
+                <span>Открыто {% static_placeholder 'time-work' %}</span>
               </div>
             </li>
             </ul>
@@ -140,7 +141,7 @@
                 <li class="info-item">
                 <i class="licon-map-marker"></i>
                   <div class="item-info">
-                    <span>Санкт-Петербург <br/>улица Мельничная 21, офис 302.</span>
+                    <span>Санкт-Петербург <br/>{% static_placeholder 'adress' %}</span>
                   </div>
                 </li>
             </ul>
@@ -172,8 +173,7 @@
               <div class="search-holder">
 
                 <button type="button" class="search-button"></button>
-
-                <a href="#" class="btn btn-style-5">Обратный звононк </a>
+                <a href="/contact" class="btn btn-style-5">Обратный звононк </a>
 
               </div>
 
@@ -234,7 +234,7 @@
 
     <div class="entry-box">
     <div class="row">
-      
+
     {% project_list_tags %}
     </div>
     </div>
@@ -243,16 +243,7 @@
     </div>
     </div>
     {% endblock %}
-    <div class="call-out type1">
-        <div class="container">
-          
-          <div class="align-center">
-            <h2>Необходимо срочное обслуживание? Вызовите нас +7(812)605-99-09</h2>
-            <h4>24 часа, 7 дней в недели, 365 дней в неделю!</h4>
-          </div>
 
-        </div>
-    </div>
     {% include 'includes/partners.html' %}
     <!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
 
@@ -272,16 +263,16 @@
       	<li class="info-item"><i class="licon-map-marker">&nbsp;</i>
 
       	<div class="item-info"><span>Санкт-Петербург<br />
-      	улица Мельничная, 21, офис 302.</span></div>
+      	{% static_placeholder 'adress' %}</span></div>
       	</li>
       	<li class="info-item"><i class="licon-at-sign">&nbsp;</i>
-      	<div class="item-info"><span>E-mail:</span> <a href="mailto:#">info@climatim.ru</a></div>
+      	<div class="item-info"><span>E-mail:</span> <a href="mailto:{% static_placeholder 'mail' %}">{% static_placeholder 'mail' %}</a></div>
       	</li>
       	<li class="info-item"><i class="licon-telephone2">&nbsp;</i>
-      	<div class="item-info"><span>Телефон:</span> <a href="#">+7(812)605-99-09</a></div>
+      	<div class="item-info"><span>Телефон:</span> <a href="{% static_placeholder 'phone' %}">{% static_placeholder 'phone' %}</a></div>
       	</li>
       	<li class="info-item"><i class="licon-clock3">&nbsp;</i>
-      	<div class="item-info"><span>Часы работы:ПН-ПТ с 8-00 до 19-00<br /></span></div>
+      	<div class="item-info"><span>Часы работы:{% static_placeholder 'time-work' %}<br /></span></div>
       	</li>
       </ul>
       </div>
@@ -340,13 +331,7 @@
 
           <div class="copyright flex-row flex-justify">
             {% static_placeholder 'copyright' %}
-            <ul class="info-links h-type">
-              <li><a href="#">Кондиционирование</a></li>
-              <li><a href="#">Отопление</a></li>
-              <li><a href="#">Водоснабжение</a></li>
-              <li><a href="#">Вентиляция</a></li>
-              <li><a href="http://kmv-it.ru">Сделано в kmv-it.ru</a></li>
-            </ul>
+            {% static_placeholder 'menu_bottom' %}
           </div>
 
         </div>
@@ -355,6 +340,7 @@
 
     </footer>
     {% endblock footer %}
+
     <!-- - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - -->
 
   </div>
@@ -374,14 +360,14 @@
                     });
                 } catch(e) { }
             });
-    
+
             var n = d.getElementsByTagName("script")[0],
                 s = d.createElement("script"),
                 f = function () { n.parentNode.insertBefore(s, n); };
             s.type = "text/javascript";
             s.async = true;
             s.src = "https://mc.yandex.ru/metrika/tag.js";
-    
+
             if (w.opera == "[object Opera]") {
                 d.addEventListener("DOMContentLoaded", f, false);
             } else { f(); }

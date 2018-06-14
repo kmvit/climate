@@ -2,47 +2,35 @@
 {% load cms_tags %}
 {% block title %}{% page_attribute "page_title" %}{% endblock %}
 {% block description %}{% page_attribute "meta_description" %}{% endblock %}
-
 {% block content %}
 <div id="content" class="page-content-wrap">
-
       <div class="container">
-
         <div class="row flex-row">
           <main id="main" class="col-md-8 col-sm-12 sbr">
-
             <div class="entry-box entry-small">
               {% for item in project_list %}
               <!-- entry -->
               <div class="entry">
-
                 <!-- - - - - - - - - - - - - - Entry attachment - - - - - - - - - - - - - - - - -->
                 <div class="thumbnail-attachment">
-                  <a href="#"><img src="{{item.image.url}}" alt="{{item.title}}"></a>
+                  <a href="{% url 'projects:project_detail' slug=item.slug%}"><img src="{{item.image.url}}" alt="{{item.title}}"></a>
                 </div>
-
                 <!-- - - - - - - - - - - - - - Entry body - - - - - - - - - - - - - - - - -->
                 <div class="entry-body">
                   <div class="entry-meta">
                     <time class="entry-date" datetime="2016-08-27">{{item.created}}</time>
-                    <a href="#" class="entry-cat">{{item.category}}</a>
+                    <a class="entry-cat">{{item.category}}</a>
                   </div>
-                  <h4 class="entry-title"><a href="/{{item.slug}}">{{item.title}}</a></h4>
-                  <p>{{item.content|safe|slice:":100"}}. </p>
-                  <a href="/{{item.slug}}" class="info-btn">Подробнее</a>
+                  <h4 class="entry-title"><a href="{% url 'projects:project_detail' slug=item.slug%}">{{item.title}}</a></h4>
+                  <p>{{item.content|linebreaks|slice:":80"}}</p>
+                  <a href="{% url 'projects:project_detail' slug=item.slug%}" class="info-btn">Подробнее</a>
                 </div>
               </div>
               {% endfor %}
-
                 <!-- - - - - - - - - - - - - - Entry body - - - - - - - - - - - - - - - - -->
-
-
               </div>
-
-
           </main>
           <aside id="sidebar" class="col-md-4 col-sm-12 sbr">
-
             <!-- widget -->
             <div class="widget">
               <form class="search-form">
@@ -50,44 +38,18 @@
                 <button type="button"><span class="licon-magnifier"></span></button>
               </form>
             </div>
-
             <!-- widget -->
             <div class="widget">
-
               <h5 class="widget-title">Категории</h5>
               <ul class="custom-list var2 type-5">
                 {% for item in category_list %}
-                <li><a href="#">{{item}}</a></li>
+                <li>{{item}}</li>
                 {% endfor %}
-
               </ul>
-
             </div>
-
-            <!-- widget -->
-            <div class="widget">
-
-              <h5 class="widget-title">Скидка для клиента</h5>
-              <div class="content-element3">
-                <a href="#" class="coupon">
-                  <div class="inner">
-                    <h2 class="price-title"><span>$</span>10%</h2>
-                    <div class="disc-for">КУПОН НА МЕСЯЦ</div>
-                    <div class="btn btn-style-3 btn-small">Получить</div>
-                    <p>Для посетителей сайта скидка 10%.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-
-
-
           </aside>
         </div>
-
       </div>
-
     </div>
 {% endblock %}
 {% block last-projects %}

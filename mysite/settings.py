@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'mysite',
     'news',
     'project',
+    'djangocms_forms',
 )
 
 LANGUAGES = (
@@ -206,3 +207,7 @@ THUMBNAIL_PROCESSORS = (
 CKEDITOR_SETTINGS = {
     'allowedContent' : True,
 }
+
+
+DJANGOCMS_FORMS_DEFAULT_TEMPLATE = 'djangocms_forms/form_template/default.html'
+DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('form-control', ) }
