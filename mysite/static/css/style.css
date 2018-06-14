@@ -1553,12 +1553,12 @@ button.search-button:before{content: "\e922";}
   }
 
   .banners .bg-col-left{
-    background: url(../images/960x189_bg1.jpg) no-repeat;
+    background:url(../images/960x189_bg2.jpg) no-repeat;
     left: 0;
   }
 
   .banners .bg-col-right{
-    background: url(../images/960x189_bg2.jpg) no-repeat;
+      background:url(../images/960x189_bg1.jpg) no-repeat;
     right: 0;
   }
 
@@ -5152,6 +5152,7 @@ button.search-button:before{content: "\e922";}
 
   .thumbnail-attachment img{
     width: 100%;
+    height:260px;
   }
 
   .entry-body .entry-title{

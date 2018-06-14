@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  {% load cms_tags menu_tags sekizai_tags staticfiles thumbnail pagelist_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles thumbnail pagelist_tags %}
   <!-- Google Web Fonts
   ================================================== -->
 
@@ -10,13 +10,12 @@
   <!-- Basic Page Needs
   ================================================== -->
 
-  <title>{% block title %}{% page_attribute "page_title" %}{% endblock title %}</title>
+   <title>{% block title %}Заполни{% endblock %}</title>
 
   <!--meta info-->
   <meta charset="utf-8">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="author" content="climatim.ru">
+  <meta name="description" content='{% block description %}Заполни{% endblock %}'>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -44,7 +43,6 @@
 
   {% render_block "js" %}
 </head>
-
 <body>
 {% cms_toolbar %}
   <div class="loader"></div>
@@ -76,9 +74,9 @@
         <div class="vc-child h-inherit">
 
           <form>
-            <button type="submit" class="btn btn-style-5">Search</button>
+            <button type="submit" class="btn btn-style-5">Поиск</button>
             <div class="wrapper">
-              <input type="text" name="search" placeholder="Start typing...">
+              <input type="text" name="search" placeholder="Начни печатать...">
             </div>
           </form>
 
@@ -93,14 +91,11 @@
 
         <div class="container extra-width">
           <div class="flex-row flex-justify">
-            <a href>Выберите город</a>
+  
             <ul class="social-icons">
 
               <li><a href="#"><i class="icon-facebook"></i></a></li>
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-gplus-3"></i></a></li>
-              <li><a href="#"><i class="icon-linkedin-3"></i></a></li>
-              <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+              <li><a href="#"><i class="icon-vk"></i></a></li>
               <li><a href="#"><i class="icon-instagram-5"></i></a></li>
 
             </ul>
@@ -129,27 +124,25 @@
                 <i class="licon-rain"></i>
                 <div class="item-info">
                   <span>Санкт-Петербург</span>
-                  <h5>987-654-3210</h5>
+                  <h5><a href="tel:+78126059909">+7(812)605-99-09</a></h5>
                 </div>
               </li>
             </ul>
             <ul class="contact-info">
               <li class="info-item">
-                <i class="licon-sun"></i>
-                <div class="item-info">
-                  <span>Москва</span>
-                  <h5>987-654-3210</h5>
-                </div>
-              </li>
+              <i class="licon-clock3"></i>
+              <div class="item-info">
+                <span>Открыто 8:00-18:00 <br> ПН - ПТ</span>
+              </div>
+            </li>
             </ul>
             <ul class="contact-info">
-              <li class="info-item">
-                <i class="licon-telephone2"></i>
-                <div class="item-info">
-                  <span>Бесплатный</span>
-                  <h4>8(800)-654-3210</h4>
-                </div>
-              </li>
+                <li class="info-item">
+                <i class="licon-map-marker"></i>
+                  <div class="item-info">
+                    <span>Санкт-Петербург <br/>улица Мельничная 21, офис 302.</span>
+                  </div>
+                </li>
             </ul>
 
           </div>
@@ -205,12 +198,12 @@
 
       <div class="container">
 
-        <h1 class="page-title">{% page_attribute "page_title" %}</h1>
+        <h1 class="page-title">{% page_attribute "title" %}</h1>
 
         <ul class="breadcrumbs">
 
           <li><a href="index.html">Главная</a></li>
-          <li>{% page_attribute "page_title" %}</li>
+          <li>{% page_attribute "title" %}</li>
 
         </ul>
 
@@ -250,6 +243,16 @@
     </div>
     </div>
     {% endblock %}
+    <div class="call-out type1">
+        <div class="container">
+          
+          <div class="align-center">
+            <h2>Необходимо срочное обслуживание? Вызовите нас +7(812)605-99-09</h2>
+            <h4>24 часа, 7 дней в недели, 365 дней в неделю!</h4>
+          </div>
+
+        </div>
+    </div>
     {% include 'includes/partners.html' %}
     <!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
 
@@ -269,16 +272,16 @@
       	<li class="info-item"><i class="licon-map-marker">&nbsp;</i>
 
       	<div class="item-info"><span>Санкт-Петербург<br />
-      	пр.Ленинский проспект 0</span></div>
+      	улица Мельничная, 21, офис 302.</span></div>
       	</li>
-      	<li class="info-item">
-      	<div class="item-info"><span>E-mail:</span> <a href="mailto:#">Mail@companyname.com</a></div>
+      	<li class="info-item"><i class="licon-at-sign">&nbsp;</i>
+      	<div class="item-info"><span>E-mail:</span> <a href="mailto:#">info@climatim.ru</a></div>
       	</li>
       	<li class="info-item"><i class="licon-telephone2">&nbsp;</i>
-      	<div class="item-info"><span>Телефон:</span> <a href="#">987-654-3210</a></div>
+      	<div class="item-info"><span>Телефон:</span> <a href="#">+7(812)605-99-09</a></div>
       	</li>
       	<li class="info-item"><i class="licon-clock3">&nbsp;</i>
-      	<div class="item-info"><span>Часы работы:ПН-ПТ с 9-00 до 20-00<br /></span></div>
+      	<div class="item-info"><span>Часы работы:ПН-ПТ с 8-00 до 19-00<br /></span></div>
       	</li>
       </ul>
       </div>
@@ -342,6 +345,7 @@
               <li><a href="#">Отопление</a></li>
               <li><a href="#">Водоснабжение</a></li>
               <li><a href="#">Вентиляция</a></li>
+              <li><a href="http://kmv-it.ru">Сделано в kmv-it.ru</a></li>
             </ul>
           </div>
 
@@ -356,7 +360,35 @@
   </div>
 
   <!-- - - - - - - - - - - - end Wrapper - - - - - - - - - - - - - - -->
-
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter49086657 = new Ya.Metrika2({
+                        id:49086657,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+    
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/tag.js";
+    
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks2");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/49086657" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
   <!-- JS Libs & Plugins
   ============================================ -->
   <script src="{% static 'js/libs/jquery.modernizr.js' %}"></script>

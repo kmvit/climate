@@ -718,12 +718,12 @@
 
 			$(document).ready(function() {
 
-				var myCenter = new google.maps.LatLng(30.3459488, -97.7145152);
+				var myCenter = new google.maps.LatLng(59.91034, 30.3828529);
 
 				function loadMap() {
 				  	var mapProp = {
-					    center: new google.maps.LatLng(30.3459488, -97.6545152),
-					    zoom:13,
+					    center: new google.maps.LatLng(59.90620871, 30.4824165),
+					    zoom:10,
 					    mapTypeId:google.maps.MapTypeId.ROADMAP
 
 					};
@@ -739,7 +739,7 @@
 		            var marker = new google.maps.Marker({
 		               position:myCenter,
 		               map: map,
-		               icon: 'images/map_marker.png'
+		               icon: '/static/images/map_marker.png'
 		            });
 		            
 		            marker.setMap(map);

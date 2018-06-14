@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load cms_tags %}
-{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block title %}{% page_attribute "page_title" %}{% endblock %}
+{% block description %}{% page_attribute "meta_description" %}{% endblock %}
 {% block content %}
 <div id="content" class="page-content-wrap">
 
@@ -23,20 +24,20 @@
 								<i class="licon-telephone2"></i>
 								<div class="item-info">
 									<span>Телефоны:</span>
-									<a href="#">987-654-3210</a>
+									<a href="tel:{% placeholder 'phone' %}">{% placeholder 'phone' %}</a>
 								</div>
 							</li>
 							<li class="info-item">
 								<i class="licon-at-sign"></i>
 								<div class="item-info">
 									<span>E-mail:</span>
-									<a href="mailto:#">Mail@companyname.com</a>
+									<a href="mailto:{% placeholder 'email' %}">{% placeholder 'email' %}</a>
 								</div>
 							</li>
 							<li class="info-item">
 								<i class="licon-clock3"></i>
 								<div class="item-info">
-									<span>Открыто 8.00-18.00: <br> Понедельник - Суббота</span>
+									<span>{% placeholder 'work-day' %}</span>
 								</div>
 							</li>
 

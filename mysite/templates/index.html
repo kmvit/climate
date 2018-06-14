@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% load cms_tags static %}
-{% load pagelist_tags %}
-{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% load cms_tags static pagelist_tags %}
+{% block title %}{% page_attribute "page_title" %}{% endblock %}
+{% block description %}{% page_attribute "meta_description" %}{% endblock %}
 {% block bread %}
 {% endblock bread %}
 {% block slider %}

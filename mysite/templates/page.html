@@ -2,7 +2,8 @@
 {% load menu_tags %}
 {% load pagelist_tags %}
 {% load cms_tags %}
-{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block title %}{% page_attribute "page_title" %}{% endblock %}
+{% block description %}{% page_attribute "meta_description" %}{% endblock %}
 
 {% block content %}
 
