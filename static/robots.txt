@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /admin
+Disallow: /static
+Disallow: /politika-konfidencialnosti
+Disallow: /*?
+
+User-agent: Yandex
+Disallow: /admin
+Disallow: /static
+Disallow: /*?
+Disallow: /politika-konfidencialnosti
+Host: climatim.ru
+
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /static
+Disallow: /politika-konfidencialnosti
+Disallow: /*?

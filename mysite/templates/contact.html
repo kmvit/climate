@@ -17,14 +17,14 @@
 							<li class="info-item">
 								<i class="licon-map-marker"></i>
 								<div class="item-info">
-									<span>Россия Санкт-Петербург, <br> Ленинский проспект 45.</span>
+									<span>{% static_placeholder 'adress' %}</span>
 								</div>
 							</li>
 							<li class="info-item">
 								<i class="licon-telephone2"></i>
 								<div class="item-info">
 									<span>Телефоны:</span>
-									<a href="tel:{% placeholder 'phone' %}">{% placeholder 'phone' %}</a>
+									<a href="tel:{% placeholder 'phone' %}">{% static_placeholder 'phone' %}</a>
 								</div>
 							</li>
 							<li class="info-item">
@@ -37,23 +37,14 @@
 							<li class="info-item">
 								<i class="licon-clock3"></i>
 								<div class="item-info">
-									<span>{% placeholder 'work-day' %}</span>
+									<span>{% static_placeholder 'time-work' %}</span>
 								</div>
 							</li>
 
 						</ul>
 					</div>
 
-					<ul class="social-icons style-2">
 
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-gplus-3"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin-3"></i></a></li>
-						<li><a href="#"><i class="icon-youtube-play"></i></a></li>
-						<li><a href="#"><i class="icon-instagram-5"></i></a></li>
-
-					</ul>
 
 				</div>
 				<div class="col-sm-8">

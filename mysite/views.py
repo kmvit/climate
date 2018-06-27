@@ -14,9 +14,9 @@ def email(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             phone = form.cleaned_data['phone']
-            from_email = 'justscoundrel@yandex.ru'
+            from_email = 'info@climatim.ru'
             try:
-                send_mail(name, phone, from_email, ['justscoundrel@yandex.ru'])
+                send_mail(name, phone, from_email, ['info@climatim.ru'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
     return render(request, "email.html", {'form': form})
